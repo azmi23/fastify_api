@@ -17,7 +17,7 @@ const {DataTypes, Model} = require('sequelize')
 
 module.exports = (fastify) => {
   try {
-    const user = fastify.db.define('User', {
+    const user = fastify.db.define('user', {
       firstName: {
         type: DataTypes.STRING,
         allowNull: false
