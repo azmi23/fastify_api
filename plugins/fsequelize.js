@@ -25,7 +25,6 @@ module.exports = fp(async function (fastify, opts) {
       .authenticate()
       .then(() => {
         console.log(chalk.green('Connection has been established successfully.'));
-        console.log(process.env.port_db)
         
         // fastify.db.sync()
       })

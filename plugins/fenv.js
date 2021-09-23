@@ -26,7 +26,6 @@ module.exports = fp(async function(fastify, opts){
     .ready((err) => {
       if (err) console.error(err)
   
-      console.log(fastify.config)
       console.log('port_db', process.env.PORT_DB) // or fastify[options.confKey]
       // output: { PORT: 3000 }
     })
