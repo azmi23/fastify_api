@@ -12,12 +12,12 @@ module.exports = fp(async function (fastify, opts) {
     dialect: 'mysql',
 
 
-    
-    host: process.env.host_db,
-    port: process.env.port_db,
-    database: process.env.database,
-    username: process.env.username_db,
-    password: process.env.password_db
+
+    host: process.env.HOST_DB,
+    port: process.env.PORT_DB,
+    database: process.env.DATABASE,
+    username: process.env.USERNAME_DB,
+    password: process.env.PASSWORD_DB
   }
 
   fastify.register(require('fastify-sequelize'), config).ready(async function () {
