@@ -10,11 +10,14 @@ module.exports = fp(async function (fastify, opts) {
     instance: 'db',
     autoconnect: true,
     dialect: 'mysql',
-    host: 'localhost',
-    port: '3306',
-    database: 'second_app',
-    username: 'root',
-    password: 'hai23'
+
+
+    
+    host: process.env.host_db,
+    port: process.env.port_db,
+    database: process.env.database,
+    username: process.env.username_db,
+    password: process.env.password_db
   }
 
   fastify.register(require('fastify-sequelize'), config).ready(async function () {
@@ -22,6 +25,7 @@ module.exports = fp(async function (fastify, opts) {
       .authenticate()
       .then(() => {
         console.log(chalk.green('Connection has been established successfully.'));
+        console.log(process.env.port_db)
         
         // fastify.db.sync()
       })

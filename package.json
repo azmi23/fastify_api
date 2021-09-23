@@ -20,6 +20,7 @@
     "fastify-autoload": "^3.3.1",
     "fastify-cli": "^2.13.0",
     "fastify-cors": "^6.0.2",
+    "fastify-env": "^2.1.1",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
     "fastify-sequelize": "^1.0.4",
