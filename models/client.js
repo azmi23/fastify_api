@@ -1,30 +1,30 @@
-'user strict'
-const {DataTypes, Model} = require('sequelize')
+'use strict'
+const { DataTypes } = require("sequelize")
 const sequelize = require('sequelize')
-const { uuid } = require('uuidv4')
+const { uuid } = require("uuidv4")
 
 module.exports = (fastify) => {
   try {
-    const user = fastify.db.define('user', {
-      id: {
+    const user = fastify.db.define('client', {
+      client_id: {
         type: DataTypes.UUID,
-        primaryKey: true,
-        allowNull: false,
-        defaultValue: uuid()
-      },
-      email: {
-        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        validate: {
-          isEmail: true,
-        },
+        defaultValue: uuid()
       },
-      password: {
+      client_secret: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      data_uris: {
+        type: DataTypes.STRING
+      },
+      grants: {
         type: DataTypes.STRING,
         allowNull: false
       }
     })
+    
     return user
   } catch (error) {
     return error

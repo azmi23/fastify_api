@@ -15,17 +15,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "argon2": "^0.28.2",
     "chalk": "^4.1.2",
     "fastify": "^3.0.0",
     "fastify-autoload": "^3.3.1",
     "fastify-cli": "^2.13.0",
     "fastify-cors": "^6.0.2",
     "fastify-env": "^2.1.1",
+    "fastify-formbody": "^5.1.0",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
     "fastify-sequelize": "^1.0.4",
     "mysql2": "^2.3.0",
-    "sequelize": "^6.6.5"
+    "oauth2-server": "^3.1.1",
+    "sequelize": "^6.6.5",
+    "uuidv4": "^6.2.12"
   },
   "devDependencies": {
     "tap": "^15.0.9"
