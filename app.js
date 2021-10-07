@@ -14,6 +14,7 @@ module.exports = async function (fastify, opts) {
 
   fastify.register(require('./database/fsequelize'))
   fastify.register(require('./database/models'))
+  fastify.register(require('fastify-formbody'))
 
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'plugins'),
@@ -26,6 +27,22 @@ module.exports = async function (fastify, opts) {
     dir: path.join(__dirname, 'routes'),
     options: Object.assign({}, opts)
   })
+
+  fastify.register(AutoLoad, {
+    dir: path.join(__dirname, 'routes/guest'),
+    options: Object.assign({}, opts)
+  })
+
+  fastify.register(AutoLoad, {
+    dir: path.join(__dirname, 'routes/user'),
+    options: Object.assign({}, opts)
+  })
+
+  fastify.register(AutoLoad, {
+    dir: path.join(__dirname, 'routes/admin'),
+    options: Object.assign({}, opts)
+  })
+
 
   // fastify.register(AutoLoad, {
   //   dir: path.join(__dirname, 'models'),

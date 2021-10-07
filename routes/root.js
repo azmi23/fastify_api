@@ -7,10 +7,9 @@ const {user} = require('../models')
 module.exports = async function (fastify, opts) {
   fastify.addHook('onRequest', async (req, res) => {
     const result = await fastify.oauth.authenticate(new Request(req), new Response(res))
-    console.log(result)
     if (result) {
       return result
-    } else return
+    } else return fastify.httpErrors.unauthorized()
   })
 
   fastify.get('/', async function (request, reply) {
@@ -26,17 +25,4 @@ module.exports = async function (fastify, opts) {
   fastify.post('/add_user', async (req, res) => userController.createUser(req, res, fastify))
 
   fastify.post('/login', async (req, res) => userController.isYou(req, res, fastify))
-
-  // fastify.get('/tests', async (req, res) => console.log(models))
-
-  // fastify.get('/db', async function(req, res) {
-  //   try{
-  //     const result = await fastify.db
-  //     console.log(result)
-  //     return 1
-  //   }catch(err){
-  //     console.log(err)
-  //     return 0
-  //   }
-  // })
 }

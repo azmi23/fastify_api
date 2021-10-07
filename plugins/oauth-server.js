@@ -13,10 +13,11 @@ module.exports = fp(async function(fastify, opts) {
             access_token: accessToken
           }
         })
+        console.log(token)
         if(token){
           return {
-            refreshToken: token.refresh_token,
-            refreshTokenExpiresAt: token.expires_at,
+            accessToken: token.access_token,
+            accessTokenExpiresAt: token.expires_at,
             client: {
               id: token.client_id
             }, 
@@ -204,7 +205,7 @@ module.exports = fp(async function(fastify, opts) {
     accessTokenLifetime: 4 * 60 * 60
   });
 
-  fastify.register(require('fastify-formbody'))
+  // fastify.register(require('fastify-formbody'))
 
   fastify.decorate('oauth', oauth)
 })

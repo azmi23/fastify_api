@@ -23,6 +23,22 @@ module.exports = (fastify) => {
       password: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+      gender: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      firstName: {
+        type: DataTypes.STRING,
+        allowNul: false
+      },
+      lastName: {
+        type: DataTypes.STRING,
+        allowNul: false
+      },
+      birthDay: {
+        type: DataTypes.DATE,
+        allowNul: false
       }
     })
     return user

@@ -23,6 +23,7 @@
     "fastify-cors": "^6.0.2",
     "fastify-env": "^2.1.1",
     "fastify-formbody": "^5.1.0",
+    "fastify-multipart": "^5.0.2",
     "fastify-plugin": "^3.0.0",
     "fastify-sensible": "^3.1.1",
     "fastify-sequelize": "^1.0.4",

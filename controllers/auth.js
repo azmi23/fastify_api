@@ -1,5 +1,14 @@
-const OAuth2Server = require('oauth2-server')
+'use strict'
 
-const oauth = new OAuth2Server({
-  
-})
+module.exports = { 
+  addClient: async function(req, res, ctx) {
+    const models = ctc.modelsDb
+    try {
+      const client = models.client.create({
+        
+      })
+    } catch (error) {
+      
+    }
+  }
+}
